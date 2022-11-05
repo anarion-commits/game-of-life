@@ -8,6 +8,7 @@ from tabulate import tabulate
 # TODO: Create a nice grid class
 # TODO: Create a separate game class
 
+
 class Dimensions(NamedTuple):
     x: int
     y: int
@@ -34,6 +35,7 @@ def add_borders(grid: np.array) -> np.array:
     border_grid = generate_grid_zeroes(dims)
     border_grid[1 : dims.x - 1, 1 : dims.y - 1] = grid
     return border_grid
+
 
 # TODO: Sort out type error
 def count_neighbours(grid: np.array, pos: Position) -> int:
@@ -78,6 +80,7 @@ def check_rules(grid: np.array, sum_grid: np.array) -> np.array:
     live_dead_cells = (sum_grid[dead_cells_index] == 3).astype(int)
     output_grid[dead_cells_index] = live_dead_cells
     return output_grid
+
 
 # TODO: Implement matplotlib animation
 def run_game(grid: np.array, iterations: int) -> np.array:
