@@ -35,7 +35,7 @@ def add_borders(grid: np.array) -> np.array:
     border_grid[1 : dims.x - 1, 1 : dims.y - 1] = grid
     return border_grid
 
-
+# TODO: Sort out type error
 def count_neighbours(grid: np.array, pos: Position) -> int:
     if pos.x < 1 or pos.y < 1 or pos.x == grid.shape[0] or pos.y == grid.shape[1]:
         raise ValueError("The inputted element must have 9 surrounding elements")
